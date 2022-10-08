@@ -10,7 +10,6 @@ class FingerPrintHeader
     {
         $request->headers->remove('X-Powered-By');
         $request->headers->remove('Server');
-        $request->headers->remove('X-AspNet-Version');
 
         return $next($request);
     }
