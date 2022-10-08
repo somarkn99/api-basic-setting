@@ -3,10 +3,8 @@
 namespace somarkn99\ApiBasicSetting\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use somarkn99\ApiBasicSetting\Middleware\AcceptJsonResponse;
-use somarkn99\ApiBasicSetting\Middleware\CORS;
-use somarkn99\ApiBasicSetting\Middleware\FingerPrintHeader;
-use somarkn99\ApiBasicSetting\Middleware\Host;
+use somarkn99\ApiBasicSetting\Middleware\{AcceptJsonResponse,CORS,FingerPrintHeader,Host};
+use Illuminate\Contracts\Http\Kernel;
 
 class ApiSettingProvider extends ServiceProvider
 {
