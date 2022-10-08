@@ -1,0 +1,22 @@
+{
+    "name": "somarkn99/ApiBasicSetting",
+    "description": "This package allows you to secure and configure the essentials of your business using the API",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["framework", "laravel","API","CORS","localization"],
+    "autoload": {
+        "psr-4": {
+            "Somarkn99\\ApiBasicSetting\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Somar Kesen",
+            "email": "contact@somar-kesen.com"
+        }
+    ],
+    "require": {}
+}
