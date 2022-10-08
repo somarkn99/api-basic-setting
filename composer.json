@@ -11,12 +11,6 @@
         "files": [
             "src/helpers.php"
         ]
-    },"extra": {
-        "laravel": {
-            "providers": [
-                "Somarkn99\\ApiBasicSetting\\Providers\\apiBasicSettingProvider"
-            ]
-        }
     },
     "authors": [
         {

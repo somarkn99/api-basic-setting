@@ -4,19 +4,29 @@ namespace somarkn99\ApiBasicSetting\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use somarkn99\ApiBasicSetting\Middleware\{AcceptJsonResponse,CORS,FingerPrintHeader,Host};
-use Illuminate\Contracts\Http\Kernel;
 
 class ApiSettingProvider extends ServiceProvider
 {
-    public function boot(Kernel $kernel)
+    public function boot()
     {
         // Global middleware
-        $kernel->pushMiddleware(AcceptJsonResponse::class);
-        $kernel->pushMiddleware(CORS::class);
-        $kernel->pushMiddleware(FingerPrintHeader::class);
-        $kernel->pushMiddleware(Host::class);
-        $kernel->pushMiddleware(localization::class);
-        $kernel->pushMiddleware(SecureCheck::class);
+        app('router')->aliasMiddleware('AcceptJsonResponse', AcceptJsonResponse::class);
+        app('router')->pushMiddlewareToGroup('AcceptJsonResponse', AcceptJsonResponse::class);
+
+        app('router')->aliasMiddleware('CORS', CORS::class);
+        app('router')->pushMiddlewareToGroup('CORS', CORS::class);
+
+        app('router')->aliasMiddleware('FingerPrintHeader', FingerPrintHeader::class);
+        app('router')->pushMiddlewareToGroup('FingerPrintHeader', FingerPrintHeader::class);
+
+        app('router')->aliasMiddleware('Host', Host::class);
+        app('router')->pushMiddlewareToGroup('Host', Host::class);
+
+        app('router')->aliasMiddleware('localization', localization::class);
+        app('router')->pushMiddlewareToGroup('localization', localization::class);
+
+        app('router')->aliasMiddleware('SecureCheck', SecureCheck::class);
+        app('router')->pushMiddlewareToGroup('SecureCheck', SecureCheck::class);
     }
 
     public function register()
