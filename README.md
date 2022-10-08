@@ -1,6 +1,6 @@
 # API Basic Setting Package
 
-This package allows you to secure and configure the essentials of your business using the API.
+This package allows you to secure and configure the essentials of your business using the API. :sunglasses:	
 
 ## Installation
 
@@ -13,7 +13,7 @@ composer require somarkn99/apibasicsetting
 ## Middleware
 
 1. AcceptJsonResponse Middleware.
-It Ensures you will get a response in JSON
+It Ensures you will get a response in JSON 
 
 ```php
 class AcceptJsonResponse
@@ -28,7 +28,7 @@ class AcceptJsonResponse
 ```
 
 2. CORS.
-In order to avoid getting a CORS Error
+In order to avoid getting a CORS Error :triumph:
 
 ```php
 class CORS
@@ -47,7 +47,7 @@ class CORS
 ```
 
 3. FingerPrintHeader
-Delete personal information sent with unnecessary requests (in order to increase security)
+Delete personal information sent with unnecessary requests (in order to increase security) :no_bell: :mute: 
 
 ```php
 class FingerPrintHeader
@@ -63,9 +63,9 @@ class FingerPrintHeader
 ```
 
 4. Host
-As an additional security step, applications are not accepted to a specific domain and are pre-defined in the .env file.
+As an additional security step, applications are not accepted to a specific domain and are pre-defined in the .env file. :lock:	:shield:
 
-Note: Local server is accepted by default
+Note: Local server is accepted by default :v:
 
 ```php
 class Host
