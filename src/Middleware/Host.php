@@ -4,7 +4,7 @@ namespace somarkn99\ApiBasicSetting\Middleware;
 
 use Closure;
 
-class CORS
+class Host
 {
     public function handle(Request $request, Closure $next)
     {
