@@ -1,6 +1,6 @@
 # API Basic Setting Package
 
-This package allows you to secure and configure the essentials of your business using the API. :sunglasses:	
+This package allows you to secure and configure the essentials of your business using the API. :sunglasses: 
 
 ## Installation
 
@@ -13,7 +13,7 @@ composer require somarkn99/apibasicsetting
 ## Middleware
 
 1. AcceptJsonResponse Middleware.
-It Ensures you will get a response in JSON 
+It Ensures you will get a response in JSON
 
 ```php
 class AcceptJsonResponse
@@ -47,7 +47,7 @@ class CORS
 ```
 
 3. FingerPrintHeader
-Delete personal information sent with unnecessary requests (in order to increase security) :no_bell: :mute: 
+Delete personal information sent with unnecessary requests (in order to increase security) :no_bell: :mute:
 
 ```php
 class FingerPrintHeader
@@ -63,7 +63,7 @@ class FingerPrintHeader
 ```
 
 4. Host
-As an additional security step, applications are not accepted to a specific domain and are pre-defined in the .env file. :lock:	:shield:
+As an additional security step, applications are not accepted to a specific domain and are pre-defined in the .env file. :lock: :shield:
 
 Note: Local server is accepted by default :v:
 
@@ -120,7 +120,7 @@ class localization
 6. SecureCheck
 
 You are building apps for many customers but don't know if they will use SSL certificates or not, which may cause some features in your app to break down.
-For that, this middleware prepares to redirect all requests to the https protocol
+For that, this middleware prepares to rejected all requests that don't use https Protocol
 (Under Development until know)
 
 ```php
@@ -129,7 +129,7 @@ class SecureCheck
     public function handle(Request $request, Closure $next)
     {
         if (! $request->secure() && App::environment('production')) {
-            return redirect()->secure($request->getRequestUri(), 301);
+            return response()->json("Please use https protocol so you can send requests.", Response::HTTP_BAD_REQUEST);
         }
 
         return $next($request);
@@ -210,6 +210,7 @@ function dateFormat($date)
 
 Let's Connect
 -------
+
 - [Linkedin](https://www.linkedin.com/in/somarkn99/)
 - [website](https://www.somar-kesen.com/)
 - [facebook](https://www.facebook.com/SomarKesen)
@@ -217,6 +218,6 @@ Let's Connect
 
 Security
 --------
-If you discover any security related issues, please email them first to contact@somar-kesen.com, 
-if we do not fix it within a short period of time please open a new issue describe your problem. 
 
+If you discover any security related issues, please email them first to contact@somar-kesen.com,
+if we do not fix it within a short period of time please open a new issue describe your problem.
