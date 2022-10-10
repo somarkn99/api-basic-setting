@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Response;
+
 if (! function_exists('_dd')) {
     function _dd(...$args)
     {
@@ -40,7 +42,7 @@ if (! function_exists('checkIfFileExists')) {
         if (isset(request()->all()[$name])) {
             if (gettype(request()->all()[$name]) !== 'array') {
                 if (! isset($file) || is_null($file) || ! request()->hasFile($name)) {
-                    throw new PublicException('please make sure you store correct file');
+                    return response()->json("please make sure you store correct file.", Response::HTTP_BAD_REQUEST);
                 }
             }
         }
