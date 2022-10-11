@@ -42,7 +42,7 @@ if (! function_exists('checkIfFileExists')) {
         if (isset(request()->all()[$name])) {
             if (gettype(request()->all()[$name]) !== 'array') {
                 if (! isset($file) || is_null($file) || ! request()->hasFile($name)) {
-                    return response()->json("please make sure you store correct file.", Response::HTTP_BAD_REQUEST);
+                    return response()->json('please make sure you store correct file.', Response::HTTP_BAD_REQUEST);
                 }
             }
         }

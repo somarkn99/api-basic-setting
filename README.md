@@ -13,6 +13,8 @@ composer require somarkn99/apibasicsetting
 ## Middleware
 
 1. AcceptJsonResponse Middleware.
+---------
+
 It Ensures you will get a response in JSON
 
 ```php
@@ -28,6 +30,7 @@ class AcceptJsonResponse
 ```
 
 2. CORS.
+---------
 In order to avoid getting a CORS Error :triumph:
 
 ```php
@@ -47,6 +50,7 @@ class CORS
 ```
 
 3. FingerPrintHeader
+---------
 Delete personal information sent with unnecessary requests (in order to increase security) :no_bell: :mute:
 
 ```php
@@ -63,6 +67,7 @@ class FingerPrintHeader
 ```
 
 4. Host
+---------
 As an additional security step, applications are not accepted to a specific domain and are pre-defined in the .env file. :lock: :shield:
 
 Note: Local server is accepted by default :v:
@@ -94,6 +99,7 @@ ACCEPTED_HOST=www.somar-kesen.com,api.somar-kesen.com
 separated between each domain by ","
 
 5. localization
+---------
 When you work with SPA or Mobile Apps, you do not want to send messages by language other than the user language, for example user language is EN and you send it in Spanish!!
 
 Here you can select the language you want to send to the user, all you need to do is add the language file to the lang folder and add a new item to the array.
@@ -118,7 +124,7 @@ class localization
 ```
 
 6. SecureCheck
-
+---------
 You are building apps for many customers but don't know if they will use SSL certificates or not, which may cause some features in your app to break down.
 For that, this middleware prepares to rejected all requests that don't use https Protocol
 (Under Development until know)
@@ -140,6 +146,7 @@ class SecureCheck
 ## Helpers
 
 1. _dd
+---------
 it's allow you to read the dd value from developer section in your browser.
 
 ```php
@@ -160,6 +167,7 @@ it's allow you to read the dd value from developer section in your browser.
 ```
 
 2. setEnv
+---------
 You can easily adjust the value of the variables in the .env file
 
 ```php
@@ -177,6 +185,7 @@ You can easily adjust the value of the variables in the .env file
 ```
 
 3. checkIfFileExists
+---------
 This function to check if request has file
 
 ```php
@@ -185,7 +194,7 @@ This function to check if request has file
         if (isset(request()->all()[$name])) {
             if (gettype(request()->all()[$name]) !== 'array') {
                 if (! isset($file) || is_null($file) || ! request()->hasFile($name)) {
-                    throw new PublicException('please make sure you store correct file');
+                    return response()->json('please make sure you store correct file.', Response::HTTP_BAD_REQUEST);
                 }
             }
         }
@@ -193,6 +202,7 @@ This function to check if request has file
 ```
 
 4. dateFormat
+---------
 It's allow you to format your date in function nested of write it every time
 for example:
 
