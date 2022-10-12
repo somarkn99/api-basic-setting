@@ -22,14 +22,19 @@ class ApiSettingProvider extends ServiceProvider
         app('router')->aliasMiddleware('FingerPrintHeader', FingerPrintHeader::class);
         app('router')->pushMiddlewareToGroup('FingerPrintHeader', FingerPrintHeader::class);
 
-        app('router')->aliasMiddleware('Host', Host::class);
-        app('router')->pushMiddlewareToGroup('Host', Host::class);
 
         app('router')->aliasMiddleware('localization', localization::class);
         app('router')->pushMiddlewareToGroup('localization', localization::class);
 
         app('router')->aliasMiddleware('SecureCheck', SecureCheck::class);
         app('router')->pushMiddlewareToGroup('SecureCheck', SecureCheck::class);
+
+        // Host middleware
+        /*
+        / Add this only for your dashboard or frontend app
+        / Don't use it for mobile application because it recognize it by Ip address for each user mobile
+        */
+        app('router')->aliasMiddleware('Host', Host::class);
     }
 
     public function register()

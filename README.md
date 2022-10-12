@@ -70,6 +70,8 @@ class FingerPrintHeader
 ---------
 As an additional security step, applications are not accepted to a specific domain and are pre-defined in the .env file. :lock: :shield:
 
+- Add this only for your dashboard or frontend app Don't use it for mobile application because it recognize it by Ip address for each user mobile
+
 Note: Local server is accepted by default :v:
 
 ```php
