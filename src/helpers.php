@@ -11,10 +11,6 @@ if (! function_exists('_dd')) {
         $path .= isset($trace[1]['function']) ? '@'.$trace[1]['function'].'()' : '';
         $path .= isset($trace[1]['function']) ? ' => line('.$trace[0]['line'].')' : null;
 
-        response()->make([
-            'Path' => $path,
-            'dd_Data' => $args,
-        ])->send();
         return response()->json([
             'Path' => $path,
             'dd_Data' => $args,
