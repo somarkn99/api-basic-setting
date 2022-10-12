@@ -220,6 +220,11 @@ function dateFormat($date)
 }
 ```
 
+Note :warning:	
+-------
+Not all of these codes have to be from my pure work, there are many of them on the Internet that I may have done some but not limited to some modification, improvement, or modification of the appearance of the code to become readable, understandable or appropriate to the place of use.
+If you have any code you think will be useful and people will use frequently in many projects do not hesitate to do a pull request to this repo.
+
 Let's Connect
 -------
 
