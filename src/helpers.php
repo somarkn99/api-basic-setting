@@ -9,12 +9,16 @@ if (! function_exists('_dd')) {
         $path = '';
         $path .= isset($trace[1]['class']) ? class_basename($trace[1]['class']) : '';
         $path .= isset($trace[1]['function']) ? '@'.$trace[1]['function'].'()' : '';
-        $path .= isset($trace[1]['function']) ? ' | line('.$trace[0]['line'].')' : null;
+        $path .= isset($trace[1]['function']) ? ' => line('.$trace[0]['line'].')' : null;
 
         response()->make([
-            'path' => $path,
-            'dd_data' => $args,
+            'Path' => $path,
+            'dd_Data' => $args,
         ])->send();
+        return response()->json([
+            'Path' => $path,
+            'dd_Data' => $args,
+        ],Response::HTTP_INTERNAL_SERVER_ERROR);
         exit();
     }
 }
